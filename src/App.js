@@ -59,8 +59,39 @@ function App() {
     setShowNav(0);
   };
 
+  // carousal
+  var carouselContainer = document.getElementById("carousel");
+  function tap(val) {
+    if (val === ">") {
+      carouselContainer.scrollLeft += 500;
+    } else {
+      carouselContainer.scrollLeft -= 500;
+    }
+  }
+
+  // Day ,hours, mins and secs
+
+  // current Date
+  var currentDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+  setInterval(function () {
+    var countDown = currentDate - new Date().getTime();
+
+    // time calculation for days , hours, mins and secs
+    var day = Math.floor(countDown / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+
+    var mins = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+    var secs = Math.floor((countDown % (1000 * 60)) / 1000);
+
+    document.getElementById("demo").innerHTML =
+      day + "D " + hours + "h " + mins + "m " + secs + "s";
+  }, 1000);
   return (
     <>
+      {/* header */}
       <header id="home">
         <div className="nav" id="nav">
           <div className="logo">LOGO</div>
@@ -117,11 +148,9 @@ function App() {
                 <a href="#player">PLAYERS</a>
               </li>
               <li>
-                {" "}
                 <a href="#blog">BLOG</a>
               </li>
               <li>
-                {" "}
                 <a href="#contact">CONTACT</a>
               </li>
             </ul>
@@ -145,6 +174,10 @@ function App() {
                   typesetting industry.
                 </p>
               </div>
+            </div>
+
+            <div className="d-flex justify-content-start gap-3 mb-3">
+              <span id="demo" className="fs-1 text"></span>
             </div>
             <div className="mb-2 mt-2">
               <a href="#contact" className="btn btn-md">
@@ -172,7 +205,7 @@ function App() {
                           className="mb-2"
                         />
 
-                        <li>Team name(Loss)</li>
+                        <li className="fw-medium">Team name(Loss)</li>
                         <li>player Name(3)</li>
                         <li>player Name(12)</li>
                         <li>player Name(10)</li>
@@ -190,8 +223,7 @@ function App() {
                           alt="img"
                           className="mb-2"
                         />
-
-                        <li>Team name(Loss)</li>
+                        <li className="fw-medium">Team name(Loss)</li>
                         <li>player Name(3)</li>
                         <li>player Name(12)</li>
                         <li>player Name(10)</li>
@@ -429,7 +461,7 @@ function App() {
         <div id="player">
           <div className="mt-4 mb-4 title fs-3">Videos</div>
 
-          <section className="carousel" aria-label="Gallery">
+          {/* <section className="carousel" aria-label="Gallery">
             <ol className="carousel__viewport">
               <li
                 id="carousel__slide1"
@@ -518,90 +550,114 @@ function App() {
                 </li>
               </ol>
             </aside>
-          </section>
+          </section> */}
+          <div class="carousel-wrapper" id="carousel">
+            <video width="443" autoPlay loop muted>
+              <source src={tennisVid_2} type="video/mp4" />
+            </video>
+            <video width="443" autoPlay loop muted>
+              <source src={tennisVid_2} type="video/mp4" />
+            </video>
+            <video width="443" autoPlay loop muted>
+              <source src={tennisVid_2} type="video/mp4" />
+            </video>
+            <video width="443" autoPlay loop muted>
+              <source src={tennisVid_2} type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div className="position-relative">
+          <div className="position-absolute end-0 ">
+            <button className="btn" type="button" onClick={() => tap("<")}>
+              {">"}
+            </button>
+          </div>
+          <div className="position-absolute start-0">
+            <button className="btn" type="button" onClick={() => tap(">")}>
+              {"<"}
+            </button>
+          </div>
         </div>
 
         {/* Blog */}
-        <div className="mt-4 mb-4 title fs-3">Our Blog</div>
+        <div className="mt-5 mb-3 title fs-3">Our Blog</div>
         <div className="col-12" id="blog">
-          <div className="">
-            <div className="blog-content">
-              <div className="custom-media mb-2">
-                <div className="card">
-                  <video width="443" autoPlay loop muted>
-                    <source src={tennisVid} type="video/mp4" />
-                  </video>
-                  <div className="overlay">
-                    <div className="card-text overlay-text">
-                      Slide in Overlay from the BottomSlide in Overlay from the
-                      Bottom Slide in Overlay from the Bottom
-                    </div>
+          <div className="blog-content">
+            <div className="custom-media mb-2">
+              <div className="card">
+                <video width="443" autoPlay loop muted>
+                  <source src={tennisVid} type="video/mp4" />
+                </video>
+                <div className="overlay">
+                  <div className="card-text overlay-text">
+                    Slide in Overlay from the BottomSlide in Overlay from the
+                    Bottom Slide in Overlay from the Bottom
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className="custom-media mb-2">
-                <div className="card">
-                  <video width="443" autoPlay loop muted>
-                    <source src={tennis_3} type="video/mp4" />
-                  </video>
-                  <div className="overlay">
-                    <div className="card-text overlay-text">
-                      Slide in Overlay from the BottomSlide in Overlay from the
-                      Bottom Slide in Overlay from the Bottom
-                    </div>
+            <div className="custom-media mb-2">
+              <div className="card">
+                <video width="443" autoPlay loop muted>
+                  <source src={tennis_3} type="video/mp4" />
+                </video>
+                <div className="overlay">
+                  <div className="card-text overlay-text">
+                    Slide in Overlay from the BottomSlide in Overlay from the
+                    Bottom Slide in Overlay from the Bottom
                   </div>
                 </div>
               </div>
-              <div className="custom-media mb-2">
-                <div className="card">
-                  <video width="443" autoPlay loop muted>
-                    <source src={tennisVid_2} type="video/mp4" />
-                  </video>
-                  <div className="overlay">
-                    <div className="card-text overlay-text">
-                      Slide in Overlay from the BottomSlide in Overlay from the
-                      Bottom Slide in Overlay from the Bottom
-                    </div>
+            </div>
+            <div className="custom-media mb-2">
+              <div className="card">
+                <video width="443" autoPlay loop muted>
+                  <source src={tennisVid_2} type="video/mp4" />
+                </video>
+                <div className="overlay">
+                  <div className="card-text overlay-text">
+                    Slide in Overlay from the BottomSlide in Overlay from the
+                    Bottom Slide in Overlay from the Bottom
                   </div>
                 </div>
               </div>
-              <div className="custom-media  mb-2">
-                <div className="card">
-                  <video width="443" autoPlay loop muted>
-                    <source src={tennisVid} type="video/mp4" />
-                  </video>
-                  <div className="overlay">
-                    <div className="card-text overlay-text">
-                      Slide in Overlay from the BottomSlide in Overlay from the
-                      Bottom Slide in Overlay from the Bottom
-                    </div>
+            </div>
+            <div className="custom-media  mb-2">
+              <div className="card">
+                <video width="443" autoPlay loop muted>
+                  <source src={tennisVid} type="video/mp4" />
+                </video>
+                <div className="overlay">
+                  <div className="card-text overlay-text">
+                    Slide in Overlay from the BottomSlide in Overlay from the
+                    Bottom Slide in Overlay from the Bottom
                   </div>
                 </div>
               </div>
-              <div className="custom-media mb-2">
-                <div className="card">
-                  <video width="443" autoPlay loop muted>
-                    <source src={tennis_3} type="video/mp4" />
-                  </video>
-                  <div className="overlay">
-                    <div className="card-text overlay-text">
-                      Slide in Overlay from the BottomSlide in Overlay from the
-                      Bottom Slide in Overlay from the Bottom
-                    </div>
+            </div>
+            <div className="custom-media mb-2">
+              <div className="card">
+                <video width="443" autoPlay loop muted>
+                  <source src={tennis_3} type="video/mp4" />
+                </video>
+                <div className="overlay">
+                  <div className="card-text overlay-text">
+                    Slide in Overlay from the BottomSlide in Overlay from the
+                    Bottom Slide in Overlay from the Bottom
                   </div>
                 </div>
               </div>
-              <div className="custom-media mb-2">
-                <div className="card">
-                  <video width="443" autoPlay loop muted>
-                    <source src={tennisVid_2} type="video/mp4" />
-                  </video>
-                  <div className="overlay">
-                    <div className="card-text overlay-text">
-                      Slide in Overlay from the BottomSlide in Overlay from the
-                      Bottom Slide in Overlay from the Bottom
-                    </div>
+            </div>
+            <div className="custom-media mb-2">
+              <div className="card">
+                <video width="443" autoPlay loop muted>
+                  <source src={tennisVid_2} type="video/mp4" />
+                </video>
+                <div className="overlay">
+                  <div className="card-text overlay-text">
+                    Slide in Overlay from the BottomSlide in Overlay from the
+                    Bottom Slide in Overlay from the Bottom
                   </div>
                 </div>
               </div>
@@ -660,6 +716,8 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* footer */}
       <div className="footer">
         <div className="text-center bg-white text-dark p-4 h-120">
           <div className="address">
@@ -724,11 +782,20 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="text-dark fs-6 mt-3">
+              Created By :
+              <span>
+                <a href="https://wizinoa.com/" target="blank" className="text">
+                  WizInoa💡
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
+      {/* whatsApp */}
       <div className="position-relative">
-        <div className="position-fixed position-absolute bottom-0 start-0">
+        <div className="position-fixed position-absolute bottom-0 p-4 mb-4 mt-4 start-0">
           <a href="https://wa.me/6381114224">
             <img src={whatapp} height={40} alt="whatsapp" />
           </a>
@@ -737,12 +804,11 @@ function App() {
 
       {/* top button */}
       <div className="position-relative">
-        <div className="position-fixed position-absolute bottom-0 end-0 p-5 ">
+        <div className="position-fixed position-absolute bottom-0 end-0 mt-1 p-4 ">
           <Link
             onClick={scrollToTop}
             style={{ display: visable ? "inline" : "none" }}
           >
-            🔝
             <img
               src={top}
               width={40}

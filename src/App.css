@@ -181,7 +181,10 @@ a{
   position: relative; 
   top: 30%;
   color: #000;
-  font-size: 3rem;
+  font-size: 2rem;
+  background: linear-gradient(100deg, #4FB477  49%,  #f2f2f2 45%);
+  border-radius: 50%;
+  padding: 15px;
 }
 a{
   color: #000;
@@ -279,8 +282,12 @@ backdrop-filter: blur(2.5px);
 video{
   border-radius: 10px;
 }
+.contact{
+  background-color: rgb(65, 145, 114);
+  height: 100vh;
+}
 
-ol {
+/* ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -321,7 +328,7 @@ ol{
 .carousel__slide:nth-child(1) {
   background-color: #99f;
 
-  /* filter: contrast(115%); */
+  filter: contrast(115%);
   object-fit: cover;
   aspect-ratio: 4/3;
   mix-blend-mode: darken;
@@ -357,10 +364,7 @@ ol{
   scroll-snap-align: center;
 }
 
-.contact{
-  background-color: #99f;
-  height: 100vh;
-}
+
 
 @media (hover: hover) {
   .carousel__snapper {
@@ -409,8 +413,23 @@ ol{
   border-radius: 50%;
   font-size: 0;
   transition: transform 0.1s;
+} */
+.carousel-wrapper {
+  display:flex;
+  overflow:hidden;
+  gap: 10px;
+  /* width: 50%; */
 }
+/* @media (hover : hover) {
+  .carousel-wrapper{
 
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+  }
+}
 @keyframes tonext {
   75% {
     left: 0;
@@ -454,7 +473,7 @@ ol{
   100% {
     scroll-snap-align: center;
   }
-}
+} */
 
 
 @media (max-width: 768px) {
@@ -527,8 +546,37 @@ ol{
   .contact .col-6{
     width: 100% !important;
   }
+
+
+  .footer-item{
+    /* display: block;*/
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-item .fs-2 {
+    font-size: calc(1.25rem + -0.1vw)!important;
+  }
+  .footer-item .fs-2 img{
+
+    width: 170%;
+    height: 50%;
+  }
+  .footer-item .fs-3{
+    font-size: calc(1.225rem + -0.1vw)!important;
+  }
+  .footer-item a{
+    font-size: 16px;
+  }
   .footer-item_3{
     display: none;
+  }
+  .contact{
+    padding: 4rem;
+      background-color: #4FB477;
+  }
+  .overlay{
+    width: 100%;
+    text-align: left;
   }
 }
 
@@ -563,6 +611,7 @@ backdrop-filter: blur(2.5px);
   font-size: 36px;
   margin-left: 50px;
 }
+
 /* .Side-nav-item{
   background-color: #000;
 } */
