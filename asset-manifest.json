@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/BOSA_sports_club/static/css/main.7661596a.css",
+    "main.js": "/BOSA_sports_club/static/js/main.05792842.js",
+    "static/media/tennis_3.mp4": "/BOSA_sports_club/static/media/tennis_3.39ada32966e6e4eba1b9.mp4",
+    "static/media/tennis_2.mp4": "/BOSA_sports_club/static/media/tennis_2.0dd815cb97977964fe49.mp4",
+    "static/media/tennis.mp4": "/BOSA_sports_club/static/media/tennis.4ce5f8a138d8f8040fbd.mp4",
+    "static/media/tennis.jpg": "/BOSA_sports_club/static/media/tennis.e96a8b39e39b55edfa7f.jpg",
+    "static/media/tennis-ball.jpg": "/BOSA_sports_club/static/media/tennis-ball.32ac15112258534a101c.jpg",
+    "static/media/csk.jpg": "/BOSA_sports_club/static/media/csk.4cbe520d11a6ad98573b.jpg",
+    "static/media/insta.svg": "/BOSA_sports_club/static/media/insta.a0a9a83448ddb5827d70493a84d37806.svg",
+    "static/media/whatapp.svg": "/BOSA_sports_club/static/media/whatapp.f2883296e5f8c40374f487bfc522416c.svg",
+    "static/media/tennis-tennis-ball-svgrepo-com.svg": "/BOSA_sports_club/static/media/tennis-tennis-ball-svgrepo-com.f24e5babb69bf0c5389925c8a3a50c94.svg",
+    "static/media/youtube.svg": "/BOSA_sports_club/static/media/youtube.dd47c6bcb87c07f7473d9f8c7764e682.svg",
+    "static/media/face.svg": "/BOSA_sports_club/static/media/face.1d8e0397525aadb52a029adc60908a02.svg",
+    "index.html": "/BOSA_sports_club/index.html",
+    "static/media/linkedin.svg": "/BOSA_sports_club/static/media/linkedin.c341cc1c307221b0fe42599c619ceeaf.svg",
+    "main.7661596a.css.map": "/BOSA_sports_club/static/css/main.7661596a.css.map",
+    "main.05792842.js.map": "/BOSA_sports_club/static/js/main.05792842.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7661596a.css",
+    "static/js/main.05792842.js"
+  ]
+}
